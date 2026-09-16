@@ -43,6 +43,7 @@
       return;
     }
     cur = list[Math.floor(Math.random() * list.length)];
+    if (MathProblems.shuffled) cur = MathProblems.shuffled(cur);
     curFormula = MathFormulas.get(cur.formulaId);
     genMode = false;
     if (!staticOnly) show(cur);

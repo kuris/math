@@ -43,7 +43,9 @@
     var pool = level === 'mixed'
       ? MathProblems.all
       : MathProblems.filter({ schoolLevel: level });
-    list = MathProblems.sample(pool, N);
+    list = MathProblems.sample(pool, N).map(function (p) {
+      return MathProblems.shuffled ? MathProblems.shuffled(p) : p;
+    });
     idx = 0; score = 0; answers = [];
     document.getElementById('quiz-setup').style.display = 'none';
     document.getElementById('quiz-result').style.display = 'none';

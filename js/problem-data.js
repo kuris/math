@@ -68,6 +68,21 @@
     return out;
   }
 
+  // 객관식 보기 순서 섞기 (원본은 그대로 두고 섞은 복사본 반환)
+  // 정적 문제 데이터의 정답 위치 쏠림 방지를 위해 표시 직전에 호출
+  function shuffled(p) {
+    if (!p || p.type !== 'choice' || !p.choices) return p;
+    var c = p.choices.slice();
+    for (var i = c.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = c[i]; c[i] = c[j]; c[j] = t;
+    }
+    var copy = {};
+    for (var k in p) copy[k] = p[k];
+    copy.choices = c;
+    return copy;
+  }
+
   global.MathProblemData = all;
   global.MathProblems = {
     all: all,
@@ -76,6 +91,7 @@
     byFormula: byFormula,
     filter: filter,
     sample: sample,
+    shuffled: shuffled,
     todayFive: todayFive
   };
 })(typeof window !== 'undefined' ? window : this);
