@@ -44,8 +44,10 @@
         document.querySelectorAll('#ws-level .filter-chip').forEach(function (c) {
           c.classList.toggle('active', c === chip);
         });
+        make();
       });
     });
+    document.getElementById('ws-count').addEventListener('change', make);
     document.getElementById('ws-make').addEventListener('click', make);
     document.getElementById('ws-print').addEventListener('click', function () { window.print(); });
     make();
