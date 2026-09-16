@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>퀴즈 - 수학아 놀자!</title>
+<meta name="description" content="10문제 퀴즈에 도전하고 점수를 기록해요.">
+<link rel="canonical" href="https://math.chatgpts.kr/quiz.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cg-auth.css">
+<meta name="google-adsense-account" content="ca-pub-3321070604000141">
+<script defer src="js/cg-ads.js" data-client="ca-pub-3321070604000141"></script>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-head">
+    <a href="index.html" class="brand-logo">
+      <span class="logo-char">🔢</span>
+      <span>수학아 <span class="dot">놀자</span></span>
+    </a>
+    <div class="header-right"></div>
+  </header>
+
+  <nav class="nav-scroll" id="math-nav" aria-label="주요 메뉴"></nav>
+
+  <div class="page-eyebrow">QUIZ</div>
+  <h1 class="page-title">🎯 수학 퀴즈</h1>
+  <p class="page-desc">10문제를 풀고 점수를 확인해요. 로그인은 선택이에요.</p>
+  <div class="toolbar">
+    <div class="filter-chips" id="quiz-level">
+      <button class="filter-chip active" data-level="mixed">🎲 골고루</button>
+      <button class="filter-chip lv-el" data-level="elementary">🌱 초등</button>
+      <button class="filter-chip lv-mi" data-level="middle">🌊 중등</button>
+      <button class="filter-chip lv-hi" data-level="high">🔮 고등</button>
+    </div>
+  </div>
+  <div class="card" id="quiz-setup">
+    <p style="margin:0 0 12px;">학교급을 고르고 시작해 보세요. 10문제가 나와요.</p>
+    <button class="btn btn-primary" id="quiz-start">퀴즈 시작</button>
+  </div>
+  <div class="card" id="quiz-play" style="display:none;">
+    <div class="quiz-progress" id="quiz-dots"></div>
+    <div id="quiz-q"></div>
+    <ul class="choice-list" id="quiz-choices" style="display:none;"></ul>
+    <div style="display:flex;gap:8px;margin-top:10px;" id="quiz-input-row" style="display:none;">
+      <input class="answer-input" id="quiz-a" placeholder="답을 적어 보세요">
+      <button class="btn btn-primary" id="quiz-ok">확인</button>
+    </div>
+    <div id="quiz-fb"></div>
+  </div>
+  <div class="card" id="quiz-result" style="display:none;text-align:center;">
+    <div style="font-size:52px;" id="quiz-emoji">🎉</div>
+    <h2 id="quiz-score" style="margin:8px 0;"></h2>
+    <p id="quiz-msg" style="color:var(--ink-soft);"></p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px;">
+      <button class="btn btn-primary" id="quiz-retry">다시 도전</button>
+      <a href="progress.html" class="btn btn-outline">내 기록 보기</a>
+    </div>
+  </div>
+
+  <footer class="site-foot">
+    <div class="foot-links">
+        <a href="https://hanja.chatgpts.kr" target="_blank" rel="noopener">📖 한자야 놀자</a>
+        <a href="https://voca.chatgpts.kr" target="_blank" rel="noopener">⚡ 단어야 놀자</a>
+        <a href="https://history.chatgpts.kr" target="_blank" rel="noopener">📜 역사야 놀자</a>
+        <a href="https://fortune.chatgpts.kr" target="_blank" rel="noopener">🔮 운세야 놀자</a>
+        <a href="https://mind.chatgpts.kr" target="_blank" rel="noopener">🧠 마인드테스트</a>
+        <a href="https://work.chatgpts.kr" target="_blank" rel="noopener">💼 워크야 놀자</a>
+        <a href="https://money.chatgpts.kr" target="_blank" rel="noopener">💰 머니야 놀자</a>
+        <a href="https://tools.chatgpts.kr" target="_blank" rel="noopener">🛠️ 문서야 놀자</a>
+        <a href="https://bible.chatgpts.kr" target="_blank" rel="noopener">✝️ 성경아 놀자</a>
+        <a href="https://maum.chatgpts.kr" target="_blank" rel="noopener">🪷 마음아 놀자</a>
+        <a href="https://book.chatgpts.kr" target="_blank" rel="noopener">📚 독서야 놀자</a>
+        <a href="https://chatgpts.kr" target="_blank" rel="noopener">🏠 chatgpts.kr</a>
+    </div>
+    <p>© 2026 수학아 놀자! (math.chatgpts.kr) · 쉽고 재미있는 수학 공식 학습</p>
+  </footer>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="js/supabase-config.js"></script>
+<script defer src="js/cg-auth.js" data-service="math" data-mount=".header-right" data-mount-mode="append" data-my-page="progress.html" data-hint="로그인하면 학습 기록이 계정에 저장돼요."></script>
+<script defer src="js/math-data.js"></script>
+<script defer src="js/formula-el.js"></script>
+<script defer src="js/formula-mi.js"></script>
+<script defer src="js/formula-hi-a.js"></script>
+<script defer src="js/formula-hi-b.js"></script>
+<script defer src="js/formula-data.js"></script>
+<script defer src="js/problem-el.js"></script>
+<script defer src="js/problem-mi.js"></script>
+<script defer src="js/problem-hi-a.js"></script>
+<script defer src="js/problem-hi-b.js"></script>
+<script defer src="js/problem-data.js"></script>
+<script defer src="js/generator.js"></script>
+<script defer src="js/math-sync.js"></script>
+<script defer src="js/nav.js"></script>
+<script defer src="js/quiz.js"></script>
+<script defer src="js/track.js" data-service="math"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수학아 놀자! - 쉽고 재미있는 초중고 수학 공식</title>
+<meta name="description" content="초등부터 고등까지 수학 공식을 쉬운 설명과 재미있는 비유, 암기 팁으로 배우고 문제로 확인하는 수학 학습 서비스입니다.">
+<link rel="canonical" href="https://math.chatgpts.kr/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="수학아 놀자">
+<meta property="og:title" content="수학아 놀자!">
+<meta property="og:description" content="어려운 공식도 쉽게! 비유와 암기 팁으로 배우는 수학.">
+<meta property="og:url" content="https://math.chatgpts.kr/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cg-auth.css">
+
+<meta name="google-adsense-account" content="ca-pub-3321070604000141">
+<script defer src="js/cg-ads.js" data-client="ca-pub-3321070604000141"></script>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-head">
+    <a href="index.html" class="brand-logo">
+      <span class="logo-char">🔢</span>
+      <span>수학아 <span class="dot">놀자</span></span>
+    </a>
+    <div class="header-right"></div>
+  </header>
+
+  <nav class="nav-scroll" id="math-nav" aria-label="주요 메뉴"></nav>
+
+  <section class="hero">
+    <span class="hero-badge">📐 오늘부터 공식 마스터!</span>
+    <h1>어려운 수학도<br><span class="dot">쉽고 재미있게</span></h1>
+    <p>초등부터 고등까지! 쉬운 설명, 재미있는 비유, 외우는 꿀팁으로 공식을 배우고 문제로 확인해요.</p>
+    <div class="hero-actions">
+      <a href="formulas.html" class="btn btn-primary">📐 공식 보기</a>
+      <a href="practice.html" class="btn btn-outline">✏️ 문제 풀기</a>
+      <a href="quiz.html" class="btn btn-accent">🎯 오늘의 퀴즈</a>
+    </div>
+  </section>
+
+  <section class="section" aria-label="학교급 선택">
+    <div class="sec-head">
+      <h2>어디부터 시작할까요?</h2>
+      <p>학교급을 골라 보세요.</p>
+    </div>
+    <div class="level-grid">
+      <a href="formulas.html?level=elementary" class="level-card level-card--el">
+        <div class="emoji">🌱</div>
+        <h3>초등 수학</h3>
+        <p>계산, 분수, 도형, 평균을 쉽고 재미있게 배워요.</p>
+        <span class="btn btn-sm btn-outline">초등 공식 보기</span>
+      </a>
+      <a href="formulas.html?level=middle" class="level-card level-card--mi">
+        <div class="emoji">🌊</div>
+        <h3>중등 수학</h3>
+        <p>방정식, 함수, 도형, 확률을 공식과 문제로 익혀요.</p>
+        <span class="btn btn-sm btn-outline">중등 공식 보기</span>
+      </a>
+      <a href="formulas.html?level=high" class="level-card level-card--hi">
+        <div class="emoji">🔮</div>
+        <h3>고등 수학</h3>
+        <p>지수로그, 삼각함수, 수열, 미분적분까지 핵심 공식을 정리해요.</p>
+        <span class="btn btn-sm btn-outline">고등 공식 보기</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head">
+      <h2>📅 오늘의 공식</h2>
+      <p>매일 바뀌는 오늘의 공식이에요.</p>
+    </div>
+    <div id="home-today" class="formula-grid"></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head">
+      <h2>🎯 오늘의 5문제</h2>
+      <p>초중고 골고루, 매일 바뀌는 5문제에 도전해 보세요.</p>
+    </div>
+    <div id="home-five" class="card"></div>
+    <div style="text-align:center;margin-top:12px;">
+      <a href="quiz.html" class="btn btn-primary">퀴즈 풀러 가기</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head">
+      <h2>💡 공식 암기 꿀팁</h2>
+      <p>외우기 힘들 땐 리듬과 비유로!</p>
+    </div>
+    <div id="home-tips" class="card"></div>
+  </section>
+
+  <div id="math-recent"></div>
+
+  <section class="section" aria-label="빠른 메뉴">
+    <ul class="menu-grid">
+      <li><a href="formulas.html"><span class="emoji">📐</span><span class="label">공식 모음</span><span class="sub">110개 공식·설명</span></a></li>
+      <li><a href="practice.html"><span class="emoji">✏️</span><span class="label">연습 문제</span><span class="sub">216문제 + 숫자바꾸기</span></a></li>
+      <li><a href="quiz.html"><span class="emoji">🎯</span><span class="label">퀴즈</span><span class="sub">10문제 도전</span></a></li>
+      <li><a href="worksheet.html"><span class="emoji">📄</span><span class="label">학습지</span><span class="sub">인쇄용 문제지</span></a></li>
+      <li><a href="progress.html"><span class="emoji">📂</span><span class="label">내 기록</span><span class="sub">학습 진도·점수</span></a></li>
+      <li><a href="login.html"><span class="emoji">🔐</span><span class="label">로그인</span><span class="sub">Google로 계정 저장</span></a></li>
+    </ul>
+  </section>
+
+  <footer class="site-foot">
+    <div class="foot-links">
+        <a href="https://hanja.chatgpts.kr" target="_blank" rel="noopener">📖 한자야 놀자</a>
+        <a href="https://voca.chatgpts.kr" target="_blank" rel="noopener">⚡ 단어야 놀자</a>
+        <a href="https://history.chatgpts.kr" target="_blank" rel="noopener">📜 역사야 놀자</a>
+        <a href="https://fortune.chatgpts.kr" target="_blank" rel="noopener">🔮 운세야 놀자</a>
+        <a href="https://mind.chatgpts.kr" target="_blank" rel="noopener">🧠 마인드테스트</a>
+        <a href="https://work.chatgpts.kr" target="_blank" rel="noopener">💼 워크야 놀자</a>
+        <a href="https://money.chatgpts.kr" target="_blank" rel="noopener">💰 머니야 놀자</a>
+        <a href="https://tools.chatgpts.kr" target="_blank" rel="noopener">🛠️ 문서야 놀자</a>
+        <a href="https://bible.chatgpts.kr" target="_blank" rel="noopener">✝️ 성경아 놀자</a>
+        <a href="https://maum.chatgpts.kr" target="_blank" rel="noopener">🪷 마음아 놀자</a>
+        <a href="https://book.chatgpts.kr" target="_blank" rel="noopener">📚 독서야 놀자</a>
+        <a href="https://chatgpts.kr" target="_blank" rel="noopener">🏠 chatgpts.kr</a>
+    </div>
+    <p>© 2026 수학아 놀자! (math.chatgpts.kr) · 쉽고 재미있는 수학 공식 학습</p>
+  </footer>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="js/supabase-config.js"></script>
+<script defer src="js/cg-auth.js" data-service="math" data-mount=".header-right" data-mount-mode="append" data-my-page="progress.html" data-hint="로그인하면 학습 기록이 계정에 저장돼요."></script>
+<script defer src="js/math-data.js"></script>
+<script defer src="js/formula-el.js"></script>
+<script defer src="js/formula-mi.js"></script>
+<script defer src="js/formula-hi-a.js"></script>
+<script defer src="js/formula-hi-b.js"></script>
+<script defer src="js/formula-data.js"></script>
+<script defer src="js/problem-el.js"></script>
+<script defer src="js/problem-mi.js"></script>
+<script defer src="js/problem-hi-a.js"></script>
+<script defer src="js/problem-hi-b.js"></script>
+<script defer src="js/problem-data.js"></script>
+<script defer src="js/generator.js"></script>
+<script defer src="js/math-sync.js"></script>
+<script defer src="js/nav.js"></script>
+<script defer src="js/main.js"></script>
+<script defer src="js/track.js" data-service="math"></script>
+</body>
+</html>

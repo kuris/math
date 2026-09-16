@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로그인 & 내 정보 - 수학아 놀자!</title>
+<meta name="description" content="Google 로그인하고 학습 기록을 계정에 저장해요.">
+<link rel="canonical" href="https://math.chatgpts.kr/login.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cg-auth.css">
+<meta name="google-adsense-account" content="ca-pub-3321070604000141">
+<script defer src="js/cg-ads.js" data-client="ca-pub-3321070604000141"></script>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-head">
+    <a href="index.html" class="brand-logo">
+      <span class="logo-char">🔢</span>
+      <span>수학아 <span class="dot">놀자</span></span>
+    </a>
+    <div class="header-right"></div>
+  </header>
+
+  <nav class="nav-scroll" id="math-nav" aria-label="주요 메뉴"></nav>
+
+  <div class="page-eyebrow">LOGIN</div>
+  <h1 class="page-title">🔐 로그인</h1>
+  <p class="page-desc">내 학습 기록을 계정에 저장해요.</p>
+  <div id="auth-view" class="login-card" style="margin-top:8px;">
+    <div style="font-size:52px;">🔢</div>
+    <h1 style="margin:6px 0 10px;font-size:24px;font-weight:800;">수학아 놀자!</h1>
+    <p style="color:var(--ink-soft);margin:0 0 6px;">Google 계정으로 로그인하면</p>
+    <ul class="features">
+      <li>📐 배운 공식이 계정에 저장돼요.</li>
+      <li>🎯 퀴즈·연습 점수가 쌓여 성장 그래프가 돼요.</li>
+      <li>📱 휴대폰에서 풀고 PC에서 이어서 볼 수 있어요.</li>
+    </ul>
+    <button type="button" class="btn btn-primary" style="width:100%;" data-cg="login">Google로 로그인</button>
+    <p class="note">이 서비스는 <strong>Google 로그인 하나만</strong> 지원해요.</p>
+  </div>
+  <div id="dash-view" class="card" style="display:none;margin-top:8px;">
+    <div class="page-eyebrow">MY MATH</div>
+    <h1 class="page-title" id="dash-greeting">반가워요!</h1>
+    <p class="page-desc" id="dash-count"></p>
+    <div id="dash-recent"></div>
+    <div class="detail-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;">
+      <a href="progress.html" class="btn btn-primary">내 기록 보기</a>
+      <a href="practice.html" class="btn btn-accent">문제 풀기</a>
+      <a href="formulas.html" class="btn btn-outline">공식 보기</a>
+    </div>
+  </div>
+
+  <footer class="site-foot">
+    <div class="foot-links">
+        <a href="https://hanja.chatgpts.kr" target="_blank" rel="noopener">📖 한자야 놀자</a>
+        <a href="https://voca.chatgpts.kr" target="_blank" rel="noopener">⚡ 단어야 놀자</a>
+        <a href="https://history.chatgpts.kr" target="_blank" rel="noopener">📜 역사야 놀자</a>
+        <a href="https://fortune.chatgpts.kr" target="_blank" rel="noopener">🔮 운세야 놀자</a>
+        <a href="https://mind.chatgpts.kr" target="_blank" rel="noopener">🧠 마인드테스트</a>
+        <a href="https://work.chatgpts.kr" target="_blank" rel="noopener">💼 워크야 놀자</a>
+        <a href="https://money.chatgpts.kr" target="_blank" rel="noopener">💰 머니야 놀자</a>
+        <a href="https://tools.chatgpts.kr" target="_blank" rel="noopener">🛠️ 문서야 놀자</a>
+        <a href="https://bible.chatgpts.kr" target="_blank" rel="noopener">✝️ 성경아 놀자</a>
+        <a href="https://maum.chatgpts.kr" target="_blank" rel="noopener">🪷 마음아 놀자</a>
+        <a href="https://book.chatgpts.kr" target="_blank" rel="noopener">📚 독서야 놀자</a>
+        <a href="https://chatgpts.kr" target="_blank" rel="noopener">🏠 chatgpts.kr</a>
+    </div>
+    <p>© 2026 수학아 놀자! (math.chatgpts.kr) · 쉽고 재미있는 수학 공식 학습</p>
+  </footer>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="js/supabase-config.js"></script>
+<script defer src="js/cg-auth.js" data-service="math" data-mount=".header-right" data-mount-mode="append" data-my-page="progress.html" data-hint="로그인하면 학습 기록이 계정에 저장돼요."></script>
+<script defer src="js/math-data.js"></script>
+<script defer src="js/formula-el.js"></script>
+<script defer src="js/formula-mi.js"></script>
+<script defer src="js/formula-hi-a.js"></script>
+<script defer src="js/formula-hi-b.js"></script>
+<script defer src="js/formula-data.js"></script>
+<script defer src="js/problem-el.js"></script>
+<script defer src="js/problem-mi.js"></script>
+<script defer src="js/problem-hi-a.js"></script>
+<script defer src="js/problem-hi-b.js"></script>
+<script defer src="js/problem-data.js"></script>
+<script defer src="js/generator.js"></script>
+<script defer src="js/math-sync.js"></script>
+<script defer src="js/nav.js"></script>
+<script defer src="js/login.js"></script>
+<script defer src="js/track.js" data-service="math"></script>
+</body>
+</html>

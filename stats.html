@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>학습 통계 - 수학아 놀자!</title>
+<meta name="description" content="학교급별 학습 현황을 통계로 확인해요.">
+<link rel="canonical" href="https://math.chatgpts.kr/stats.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cg-auth.css">
+<meta name="google-adsense-account" content="ca-pub-3321070604000141">
+<script defer src="js/cg-ads.js" data-client="ca-pub-3321070604000141"></script>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-head">
+    <a href="index.html" class="brand-logo">
+      <span class="logo-char">🔢</span>
+      <span>수학아 <span class="dot">놀자</span></span>
+    </a>
+    <div class="header-right"></div>
+  </header>
+
+  <nav class="nav-scroll" id="math-nav" aria-label="주요 메뉴"></nav>
+
+  <div class="page-eyebrow">STATS</div>
+  <h1 class="page-title">📊 학습 통계</h1>
+  <p class="page-desc">얼마나 배웠는지 한눈에 보여요.</p>
+  <div id="auth-required" class="card" style="display:none;text-align:center;padding:40px 20px;">
+    <div style="font-size:44px;margin-bottom:12px;">📊</div>
+    <h2 style="margin:0 0 8px;">통계를 보려면 로그인해 주세요</h2>
+    <button type="button" class="btn btn-primary" data-cg="login" style="margin-top:16px;">Google로 로그인</button>
+  </div>
+  <div id="stats-area" class="card" style="display:none;">
+    <div class="stat-grid" id="stat-row"></div>
+    <div class="card" id="stats-level" style="margin-top:14px;"></div>
+    <div class="card" id="stats-recent" style="margin-top:14px;"></div>
+  </div>
+
+  <footer class="site-foot">
+    <div class="foot-links">
+        <a href="https://hanja.chatgpts.kr" target="_blank" rel="noopener">📖 한자야 놀자</a>
+        <a href="https://voca.chatgpts.kr" target="_blank" rel="noopener">⚡ 단어야 놀자</a>
+        <a href="https://history.chatgpts.kr" target="_blank" rel="noopener">📜 역사야 놀자</a>
+        <a href="https://fortune.chatgpts.kr" target="_blank" rel="noopener">🔮 운세야 놀자</a>
+        <a href="https://mind.chatgpts.kr" target="_blank" rel="noopener">🧠 마인드테스트</a>
+        <a href="https://work.chatgpts.kr" target="_blank" rel="noopener">💼 워크야 놀자</a>
+        <a href="https://money.chatgpts.kr" target="_blank" rel="noopener">💰 머니야 놀자</a>
+        <a href="https://tools.chatgpts.kr" target="_blank" rel="noopener">🛠️ 문서야 놀자</a>
+        <a href="https://bible.chatgpts.kr" target="_blank" rel="noopener">✝️ 성경아 놀자</a>
+        <a href="https://maum.chatgpts.kr" target="_blank" rel="noopener">🪷 마음아 놀자</a>
+        <a href="https://book.chatgpts.kr" target="_blank" rel="noopener">📚 독서야 놀자</a>
+        <a href="https://chatgpts.kr" target="_blank" rel="noopener">🏠 chatgpts.kr</a>
+    </div>
+    <p>© 2026 수학아 놀자! (math.chatgpts.kr) · 쉽고 재미있는 수학 공식 학습</p>
+  </footer>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="js/supabase-config.js"></script>
+<script defer src="js/cg-auth.js" data-service="math" data-mount=".header-right" data-mount-mode="append" data-my-page="progress.html" data-hint="로그인하면 학습 기록이 계정에 저장돼요."></script>
+<script defer src="js/math-data.js"></script>
+<script defer src="js/formula-el.js"></script>
+<script defer src="js/formula-mi.js"></script>
+<script defer src="js/formula-hi-a.js"></script>
+<script defer src="js/formula-hi-b.js"></script>
+<script defer src="js/formula-data.js"></script>
+<script defer src="js/problem-el.js"></script>
+<script defer src="js/problem-mi.js"></script>
+<script defer src="js/problem-hi-a.js"></script>
+<script defer src="js/problem-hi-b.js"></script>
+<script defer src="js/problem-data.js"></script>
+<script defer src="js/generator.js"></script>
+<script defer src="js/math-sync.js"></script>
+<script defer src="js/nav.js"></script>
+<script defer src="js/stats.js"></script>
+<script defer src="js/track.js" data-service="math"></script>
+</body>
+</html>
