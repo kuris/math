@@ -35,48 +35,43 @@
 
   <nav class="nav-scroll" id="math-nav" aria-label="주요 메뉴"></nav>
 
-  <section class="hero">
-    <span class="hero-badge">📐 오늘부터 공식 마스터!</span>
-    <h1>어려운 수학도<br><span class="dot">쉽고 재미있게</span></h1>
-    <p>초등부터 고등까지! 쉬운 설명, 재미있는 비유, 외우는 꿀팁으로 공식을 배우고 문제로 확인해요.</p>
-    <div class="hero-actions">
-      <a href="formulas.html" class="btn btn-primary">📐 공식 보기</a>
-      <a href="practice.html" class="btn btn-outline">✏️ 문제 풀기</a>
-      <a href="quiz.html" class="btn btn-accent">🎯 오늘의 퀴즈</a>
+  <section class="hero hero--split">
+    <div class="hero-left">
+      <span class="hero-badge">📐 오늘부터 공식 마스터!</span>
+      <h1>어려운 수학도<br><span class="dot">쉽고 재미있게</span></h1>
+      <p>초등부터 고등까지! 쉬운 설명, 재미있는 비유, 외우는 꿀팁으로 공식을 배우고 문제로 확인해요.</p>
+      <div class="hero-actions">
+        <a href="formulas.html" class="btn btn-primary">📐 공식 보기</a>
+        <a href="practice.html" class="btn btn-outline">✏️ 문제 풀기</a>
+        <a href="quiz.html" class="btn btn-accent">🎯 오늘의 퀴즈</a>
+      </div>
+      <div class="hero-actions hero-actions--sub">
+        <a href="worksheet.html" class="pill-link">📄 학습지 만들기</a>
+        <a href="progress.html" class="pill-link">📂 내 기록 보기</a>
+      </div>
     </div>
+    <aside class="hero-right" aria-label="오늘의 수학 미션">
+      <div class="mission-card">
+        <span class="mission-badge">🎯 오늘의 수학 미션</span>
+        <div class="mission-stats" id="home-stats"></div>
+        <div class="mission-today" id="home-mission"></div>
+        <a href="quiz.html" class="btn btn-primary btn-sm mission-cta">오늘의 5문제 시작하기</a>
+      </div>
+    </aside>
   </section>
 
   <section class="section" aria-label="초등 중등 고등 선택">
     <div class="sec-head">
       <h2>어디부터 시작할까요?</h2>
-      <p>초등·중등·고등을 골라 보세요.</p>
+      <p>초등·중등·고등을 골라 보세요. 대표 단원과 공식부터 맛볼 수 있어요.</p>
     </div>
-    <div class="level-grid">
-      <a href="formulas.html?level=elementary" class="level-card level-card--el">
-        <div class="emoji">🌱</div>
-        <h3>초등 수학</h3>
-        <p>계산, 분수, 도형, 평균을 쉽고 재미있게 배워요.</p>
-        <span class="btn btn-sm btn-outline">초등 공식 보기</span>
-      </a>
-      <a href="formulas.html?level=middle" class="level-card level-card--mi">
-        <div class="emoji">🌊</div>
-        <h3>중등 수학</h3>
-        <p>방정식, 함수, 도형, 확률을 공식과 문제로 익혀요.</p>
-        <span class="btn btn-sm btn-outline">중등 공식 보기</span>
-      </a>
-      <a href="formulas.html?level=high" class="level-card level-card--hi">
-        <div class="emoji">🔮</div>
-        <h3>고등 수학</h3>
-        <p>지수로그, 삼각함수, 수열, 미분적분까지 핵심 공식을 정리해요.</p>
-        <span class="btn btn-sm btn-outline">고등 공식 보기</span>
-      </a>
-    </div>
+    <div class="level-grid" id="home-levels"></div>
   </section>
 
   <section class="section">
     <div class="sec-head">
       <h2>📅 오늘의 공식</h2>
-      <p>매일 바뀌는 오늘의 공식이에요.</p>
+      <p>매일 바뀌는 오늘의 공식이에요. 공식 하나만 알아도 세상이 다르게 보여요.</p>
     </div>
     <div id="home-today" class="formula-grid"></div>
   </section>
@@ -84,7 +79,7 @@
   <section class="section">
     <div class="sec-head">
       <h2>🎯 오늘의 5문제</h2>
-      <p>초중고 골고루, 매일 바뀌는 5문제에 도전해 보세요.</p>
+      <p>초등·중등·고등 문제를 섞어서 보여줘요. 매일 바뀌는 5문제에 도전해 보세요.</p>
     </div>
     <div id="home-five" class="card"></div>
     <div style="text-align:center;margin-top:12px;">
@@ -95,9 +90,25 @@
   <section class="section">
     <div class="sec-head">
       <h2>💡 공식 암기 꿀팁</h2>
-      <p>외우기 힘들 땐 리듬과 비유로!</p>
+      <p>외우기 힘들 땐 리듬과 비유로! 문제로 확인하고 오래 기억해요.</p>
     </div>
     <div id="home-tips" class="card"></div>
+  </section>
+
+  <section class="section" aria-label="헷갈리는 공식">
+    <div class="sec-head">
+      <h2>😵 많이 헷갈리는 공식</h2>
+      <p>둘레와 넓이, 평균과 중앙값처럼 자주 섞이는 짝을 모아봤어요.</p>
+    </div>
+    <div id="home-confusing" class="formula-grid"></div>
+  </section>
+
+  <section class="section" aria-label="인기 단원">
+    <div class="sec-head">
+      <h2>🔥 인기 단원 바로가기</h2>
+      <p>많이 찾는 단원부터 골라 보세요.</p>
+    </div>
+    <div id="home-units" class="unit-chips"></div>
   </section>
 
   <div id="math-recent"></div>

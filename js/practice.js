@@ -180,10 +180,18 @@
 
   function start() {
     if (!document.getElementById('practice-card')) return;
-    // URL ?formula= 지원
+    // URL ?formula= / ?school= 지원 (홈 레벨 카드에서 진입)
     var fq = new URLSearchParams(window.location.search).get('formula');
+    var sq = new URLSearchParams(window.location.search).get('school');
     bind();
     fillFormulas();
+    if (sq && (sq === 'elementary' || sq === 'middle' || sq === 'high')) {
+      state.level = sq;
+      document.querySelectorAll('#level-chips .filter-chip').forEach(function (c) {
+        c.classList.toggle('active', c.getAttribute('data-level') === sq);
+      });
+      fillFormulas();
+    }
     if (fq && MathFormulas.get(fq)) {
       state.formula = fq;
       document.getElementById('formula-filter').value = fq;
