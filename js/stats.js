@@ -44,7 +44,7 @@
     });
     var max = Math.max(totals.elementary, totals.middle, totals.high, 1);
     document.getElementById('stats-level').innerHTML =
-      '<h2 class="sec-title" style="margin-top:0;">학교급별 학습</h2>' +
+      '<h2 class="sec-title" style="margin-top:0;">초등·중등·고등별 학습</h2>' +
       barRow('🌱 초등 (' + byLv.elementary + '/' + totals.elementary + ')', byLv.elementary, max, ' bar-fill--el') +
       barRow('🌊 중등 (' + byLv.middle + '/' + totals.middle + ')', byLv.middle, max, ' bar-fill--mi') +
       barRow('🔮 고등 (' + byLv.high + '/' + totals.high + ')', byLv.high, max, ' bar-fill--hi');
